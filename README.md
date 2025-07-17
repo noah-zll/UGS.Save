@@ -19,7 +19,7 @@ UGS Save System是一个灵活的Unity游戏存档系统，提供了简单易用
 1. 打开Unity项目
 2. 打开Package Manager (Window > Package Manager)
 3. 点击 "+" 按钮，选择 "Add package from git URL..."
-4. 输入: `git@github.com/ugs/UGS.Save.git`
+4. 输入: `git@github.com:noah-zll/UGS.Save.git`
 
 ### 手动安装
 
@@ -84,3 +84,4 @@ SaveManager.EnableEncryption(true, "your-encryption-key");
 ## 许可证
 
 本项目采用MIT许可证。详情请参阅[LICENSE](LICENSE)文件。
+
