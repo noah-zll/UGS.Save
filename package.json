@@ -1,0 +1,26 @@
+{
+  "name": "com.ugs.save",
+  "displayName": "UGS Save System",
+  "category": "UGS",
+  "description": "A flexible save system for Unity games that supports various data structures and formats.",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "keywords": [
+    "Save",
+    "SaveSystem",
+    "GameSave",
+    "Serialization"
+  ],
+  "author": {
+    "name": "UGS Team",
+    "email": "support@ugs.com",
+    "url": "https://ugs.com/"
+  },
+  "dependencies": {
+    "com.unity.modules.jsonserialize": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/ugs/UGS.Save.git"
+  }
+}

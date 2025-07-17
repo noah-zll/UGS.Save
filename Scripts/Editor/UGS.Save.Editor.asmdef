@@ -1,0 +1,18 @@
+{
+    "name": "UGS.Save.Editor",
+    "rootNamespace": "UGS.Save.Editor",
+    "references": [
+        "UGS.Save"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
