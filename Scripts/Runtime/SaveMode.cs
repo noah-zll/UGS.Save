@@ -6,23 +6,18 @@
 namespace UGS.Save
 {
     /// <summary>
-    /// 存档格式枚举
+    /// 存档模式
     /// </summary>
-    public enum SaveFormat
+    public enum SaveMode
     {
         /// <summary>
-        /// JSON格式
+        /// 单文件模式 - 每个存档保存为单个文件
         /// </summary>
-        Json,
-
-        /// <summary>
-        /// 二进制格式
-        /// </summary>
-        Binary,
+        SingleFile,
         
         /// <summary>
-        /// Protobuf格式
+        /// 文件夹模式 - 每个存档保存在单独的文件夹中，可包含多个文件
         /// </summary>
-        Protobuf
+        FolderBased
     }
 }

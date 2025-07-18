@@ -8,7 +8,7 @@ UGS Save System是一个灵活的Unity游戏存档系统，提供了简单易用
 
 - 支持存储任意数据结构
 - 提供完整的存档管理API（创建、获取、覆盖、删除等）
-- 支持多种存档格式（JSON、二进制）
+- 支持多种存档格式（JSON、二进制、Protobuf）
 - 可自定义存档路径和格式
 - 默认使用用户路径存储存档
 
@@ -48,6 +48,41 @@ SaveManager.SaveGame("save1", saveData);
 GameSaveData loadedData = SaveManager.LoadGame<GameSaveData>("save1");
 
 // 获取存档列表
+```
+
+## 使用Protobuf序列化
+
+从v1.1.0开始，UGS Save System支持使用Protobuf进行序列化，这提供了更高的性能和更小的文件大小。
+
+### 安装Protobuf依赖
+
+请参阅 [Protobuf序列化文档](./Documentation/ProtobufSerialization.md) 了解如何安装protobuf-net依赖。
+
+### 使用Protobuf格式
+
+```csharp
+// 初始化存档系统
+SaveManager.Initialize();
+
+// 设置使用Protobuf格式
+SaveManager.SetSaveFormat(SaveFormat.Protobuf);
+
+// 使用Protobuf特性标记的数据类
+[ProtoContract]
+public class PlayerData
+{
+    [ProtoMember(1)]
+    public string playerName;
+    
+    [ProtoMember(2)]
+    public int level;
+}
+
+// 保存和加载数据
+PlayerData data = new PlayerData { playerName = "Player1", level = 10 };
+SaveManager.SaveData(data, "save1", "player");
+PlayerData loadedData = SaveManager.LoadData<PlayerData>("save1", "player");
+```
 List<string> saveFiles = SaveManager.GetSaveList();
 
 // 删除存档

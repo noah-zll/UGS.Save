@@ -2,6 +2,15 @@
 
 所有UGS Save System的显著更改都将记录在此文件中。
 
+## [1.1.0] - 2023-12-15
+
+### 新增
+
+- 添加Protobuf序列化支持
+- 新增ProtobufSaveSerializer类
+- 添加Protobuf序列化文档和示例代码
+- 添加protobuf-net依赖
+
 ## [1.0.0] - 2023-07-17
 
 ### 新增

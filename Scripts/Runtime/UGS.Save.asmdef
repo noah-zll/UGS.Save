@@ -6,7 +6,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "protobuf-net"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

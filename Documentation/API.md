@@ -175,7 +175,8 @@ public static string GetSavePath()
 public enum SaveFormat
 {
     Json,
-    Binary
+    Binary,
+    Protobuf
 }
 ```
 
@@ -234,6 +235,10 @@ T Deserialize<T>(string serializedData) where T : class;
 ## BinarySaveSerializer
 
 `BinarySaveSerializer` 是 `ISaveSerializer` 的实现，使用 .NET 的 BinaryFormatter 进行二进制序列化和反序列化。
+
+## ProtobufSaveSerializer
+
+`ProtobufSaveSerializer` 是 `ISaveSerializer` 的实现，使用 protobuf-net 库进行 Protocol Buffers 序列化和反序列化。使用此序列化器需要为数据类添加 Protobuf 特性，详情请参阅 [Protobuf序列化文档](./ProtobufSerialization.md)。
 
 ## EncryptionUtility
 

@@ -8,10 +8,10 @@ using System;
 namespace UGS.Save
 {
     /// <summary>
-    /// 存档文件信息
+    /// 存档元数据信息
     /// </summary>
     [Serializable]
-    public class SaveFileInfo
+    public class SaveMetadata
     {
         /// <summary>
         /// 存档ID
@@ -37,38 +37,17 @@ namespace UGS.Save
         /// 存档格式
         /// </summary>
         public SaveFormat SaveFormat { get; set; }
-
+        
         /// <summary>
         /// 创建时间
         /// </summary>
         public DateTime CreationTime { get; set; }
-
+        
         /// <summary>
         /// 最后修改时间
         /// </summary>
         public DateTime LastWriteTime { get; set; }
-
-        /// <summary>
-        /// 文件大小（字节）
-        /// </summary>
-        public long SizeInBytes { get; set; }
-
-        /// <summary>
-        /// 获取格式化的文件大小
-        /// </summary>
-        public string FormattedSize
-        {
-            get
-            {
-                if (SizeInBytes < 1024)
-                    return $"{SizeInBytes} B";
-                else if (SizeInBytes < 1024 * 1024)
-                    return $"{SizeInBytes / 1024f:F2} KB";
-                else
-                    return $"{SizeInBytes / (1024f * 1024f):F2} MB";
-            }
-        }
-
+        
         /// <summary>
         /// 获取格式化的创建时间
         /// </summary>
@@ -78,10 +57,29 @@ namespace UGS.Save
         /// 获取格式化的最后修改时间
         /// </summary>
         public string FormattedLastWriteTime => LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss");
-
+        
+        public SaveMetadata()
+        {
+            CreationTime = DateTime.Now;
+            LastWriteTime = DateTime.Now;
+            SaveMode = SaveMode.SingleFile;
+            SaveFormat = SaveFormat.Json;
+        }
+        
+        public SaveMetadata(string saveId, string name = "", string description = "")
+        {
+            SaveId = saveId;
+            Name = string.IsNullOrEmpty(name) ? saveId : name;
+            Description = description;
+            CreationTime = DateTime.Now;
+            LastWriteTime = DateTime.Now;
+            SaveMode = SaveMode.SingleFile;
+            SaveFormat = SaveFormat.Json;
+        }
+        
         public override string ToString()
         {
-            return $"SaveId: {SaveId}, Name: {Name}, Mode: {SaveMode}, Format: {SaveFormat}, Created: {FormattedCreationTime}, Modified: {FormattedLastWriteTime}, Size: {FormattedSize}";
+            return $"SaveId: {SaveId}, Name: {Name}, Mode: {SaveMode}, Format: {SaveFormat}, Created: {FormattedCreationTime}";
         }
     }
 }
