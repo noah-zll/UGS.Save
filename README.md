@@ -8,7 +8,7 @@ UGS Save System是一个灵活的Unity游戏存档系统，提供了简单易用
 
 - 支持存储任意数据结构
 - 提供完整的存档管理API（创建、获取、覆盖、删除等）
-- 支持多种存档格式（JSON、二进制、Protobuf）
+- 支持多种存档格式（JSON、二进制、Protobuf、MemoryPack）
 - 可自定义存档路径和格式
 - 默认使用用户路径存储存档
 
@@ -46,6 +46,41 @@ SaveManager.SaveGame("save1", saveData);
 
 // 加载存档
 GameSaveData loadedData = SaveManager.LoadGame<GameSaveData>("save1");
+
+// 使用MemoryPack格式（高性能二进制序列化）
+SaveManager.SetSaveFormat(SaveFormat.MemoryPack);
+
+// 使用MemoryPack需要标记类（必须是独立的类，不能是嵌套类型）
+// 在单独的文件中定义：
+// [MemoryPackable]
+// public partial class PlayerData
+// {
+//     public string PlayerName { get; set; }
+//     public int Level { get; set; }
+//     public Vector3 Position { get; set; }
+//     
+//     // 如果有多个构造函数，必须使用[MemoryPackConstructor]标记其中一个
+//     [MemoryPackConstructor]
+//     public PlayerData()
+//     {
+//     }
+//     
+//     // 其他构造函数
+//     public PlayerData(string name, int level)
+//     {
+//         PlayerName = name;
+//         Level = level;
+//     }
+// }
+
+// 然后在代码中使用：
+PlayerData playerData = new PlayerData
+{
+    PlayerName = "Player1",
+    Level = 10,
+    Position = new Vector3(1, 2, 3)
+};
+SaveManager.SaveGame("save1", playerData);
 
 // 获取存档列表
 ```

@@ -26,6 +26,11 @@ namespace UGS.Save
         /// <summary>
         /// Protobuf格式
         /// </summary>
-        Protobuf
+        Protobuf,
+        
+        /// <summary>
+        /// MemoryPack格式
+        /// </summary>
+        MemoryPack
     }
 }

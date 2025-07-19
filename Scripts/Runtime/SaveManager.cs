@@ -91,6 +91,9 @@ namespace UGS.Save
                 case SaveFormat.Protobuf:
                     _serializer = new ProtobufSaveSerializer();
                     break;
+                case SaveFormat.MemoryPack:
+                    _serializer = new MemoryPackSaveSerializer();
+                    break;
                 default:
                     throw new ArgumentException("不支持的存档格式");
             }

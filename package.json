@@ -1,6 +1,6 @@
 {
   "name": "com.ugs.save",
-  "displayName": "UGS Save",
+  "displayName": "UGS.Save",
   "category": "UGS",
   "description": "A flexible save system for Unity games that supports various data structures and formats.",
   "version": "1.0.0",
@@ -12,7 +12,7 @@
     "Serialization"
   ],
   "author": {
-    "name": "UGS Team",
+    "name": "Noah",
     "email": "support@ugs.com",
     "url": "https://ugs.com/"
   },

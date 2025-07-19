@@ -1,7 +1,9 @@
 {
     "name": "UGS.Save",
     "rootNamespace": "UGS.Save",
-    "references": [],
+    "references": [
+        "GUID:af327d3acb7fb7d4ba4574340b65ffe8"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

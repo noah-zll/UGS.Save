@@ -2,6 +2,16 @@
 
 所有UGS Save System的显著更改都将记录在此文件中。
 
+## [1.2.0] - 2024-05-15
+
+### 新增
+
+- 添加MemoryPack序列化支持
+- 新增MemoryPackSaveSerializer类
+- 添加MemoryPack序列化文档和示例代码
+- 添加com.cysharp.memorypack依赖
+- 将JSON序列化从Unity内置JsonUtility更改为Newtonsoft.Json
+
 ## [1.1.0] - 2023-12-15
 
 ### 新增
