@@ -3,11 +3,14 @@
 // Copyright © 2023 UGS Team. All rights reserved.
 //------------------------------------------------------------
 
+using System;
+
 namespace UGS.Save
 {
     /// <summary>
     /// 存档格式枚举
     /// </summary>
+    [Serializable]
     public enum SaveFormat
     {
         /// <summary>

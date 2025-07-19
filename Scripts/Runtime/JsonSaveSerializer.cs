@@ -2,8 +2,7 @@
 // UGS Save System
 // Copyright © 2023 UGS Team. All rights reserved.
 //------------------------------------------------------------
-
-using UnityEngine;
+using Newtonsoft.Json;
 
 namespace UGS.Save
 {
@@ -20,7 +19,7 @@ namespace UGS.Save
         /// <returns>序列化后的JSON字符串</returns>
         public string Serialize<T>(T data) where T : class
         {
-            return JsonUtility.ToJson(data, true);
+            return JsonConvert.SerializeObject(data, Formatting.Indented);
         }
 
         /// <summary>
@@ -31,7 +30,7 @@ namespace UGS.Save
         /// <returns>反序列化后的对象</returns>
         public T Deserialize<T>(string serializedData) where T : class
         {
-            return JsonUtility.FromJson<T>(serializedData);
+            return JsonConvert.DeserializeObject<T>(serializedData);
         }
     }
 }

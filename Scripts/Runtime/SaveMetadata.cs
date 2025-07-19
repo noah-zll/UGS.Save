@@ -16,37 +16,35 @@ namespace UGS.Save
         /// <summary>
         /// 存档ID
         /// </summary>
-        public string SaveId { get; set; }
-        
+        public string SaveId;
+
         /// <summary>
         /// 存档名称
         /// </summary>
-        public string Name { get; set; }
+        public string Name;
         
         /// <summary>
         /// 存档描述
         /// </summary>
-        public string Description { get; set; }
-        
+        public string Description;
+
         /// <summary>
         /// 存档模式
         /// </summary>
-        public SaveMode SaveMode { get; set; }
+        public SaveMode SaveMode;
         
         /// <summary>
         /// 存档格式
         /// </summary>
-        public SaveFormat SaveFormat { get; set; }
-        
-        /// <summary>
+        public SaveFormat SaveFormat;      /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CreationTime { get; set; }
-        
+        public DateTime CreationTime;
+
         /// <summary>
         /// 最后修改时间
         /// </summary>
-        public DateTime LastWriteTime { get; set; }
+        public DateTime LastWriteTime;
         
         /// <summary>
         /// 获取格式化的创建时间

@@ -77,6 +77,8 @@ namespace UGS.Save.Examples
                 // 加载数据
                 _playerData = SaveManager.LoadGame<ProtobufDataExample>(saveId, "player_data");
                 
+                Debug.Log($"加载数据: {_playerData}");
+
                 // 更新UI
                 UpdateUI();
                 
